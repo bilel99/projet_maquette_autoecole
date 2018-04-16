@@ -13,3 +13,81 @@ body, html {
 .w3-bar .w3-button {
     padding: 16px;
 }
+
+
+/**
+* Contact Animate span - placeholder for input
+*/
+/* RESET */
+#contact * { box-sizing: border-box; }
+
+/* GRID */
+.col-2 {
+    float: left;
+    padding: 0 20px;
+    width: 50%;
+}
+
+/* BASIC CONTACT FORM CSS */
+#contact input,
+#contact textarea {
+    height: 45px;
+    line-height: 1.4em;
+    padding-left: 20px; /* Change this to fit your label text width */
+    width: 100%;
+}
+#contact textarea {
+    padding: 20px;
+}
+#contact label {
+    display: inline-block;
+    height: 45px;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+}
+#contact label input {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#contact label span {
+    color: darkgray;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 200;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+    padding: 0 8px;
+    pointer-events: none;
+}
+#contact .populated {
+    padding-left: 70px;
+}
+#contact input:focus + span,
+#contact input:active + span,
+#contact textarea:focus + span,
+#contact textarea:active + span {
+    top: -9px; /* Change this to fit your label text width */
+}
+#contact input[type="submit"] {
+    clear: both;
+    display: block;
+    height: auto;
+    padding: 0;
+    width: auto;
+}
+/* ANIMATION */
+#contact label input {
+    transition: padding 0.3s ease 0s;
+}
+#contact label span {
+    transition: top 0.3s ease 0s, color 0.3s ease 0s;
+}
+#contact input:focus,
+#contact textarea:focus {
+    transition: all 0.3s ease;
+}

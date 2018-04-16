@@ -38,3 +38,42 @@ function w3_open() {
 function w3_close() {
     mySidebar.style.display = "none";
 }
+
+
+/**
+ * Form animate the span placeholder
+ */
+/* ----------------------------------------
+  - Function
+  ------------------------------------------- */
+  function creativeinputs() {
+	$("#contact input, #contact textarea").each(function() {
+		$(this).addClass('populated');
+	});
+}
+/* ----------------------------------------
+- Focus - Animating the labels on input focus
+------------------------------------------- */
+$("#contact input, #contact textarea").focusin(function() {
+	$(this).removeClass('populated');
+});
+
+$("#contact input, #contact textarea").focusout(function() {
+	if ($(this).val() != '') {
+		$(this).addClass('populated');
+	} else {
+		$(this).removeClass('populated');
+	}
+});
+
+/* ----------------------------------------
+- On load
+------------------------------------------- */
+creativeinputs();
+
+/* ----------------------------------------
+- On Document ready
+------------------------------------------- */
+$(document).ready(function() {
+	creativeinputs();
+});
