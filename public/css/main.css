@@ -92,3 +92,6 @@ body, html {
 #contact textarea:focus {
     transition: all 0.3s ease;
 }
+.name-auto-ecole {
+    font-weight: 900;
+}
