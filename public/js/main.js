@@ -77,3 +77,15 @@ creativeinputs();
 $(document).ready(function() {
 	creativeinputs();
 });
+
+/**
+ * Carousel OWL Carousel Library
+ */
+/*$(document).ready(function(){
+	$(".owl-carousel").owlCarousel({
+		items: 1,
+		autoplay: true,
+		loop: true,
+		center: true
+	});
+});*/

@@ -7,6 +7,7 @@ body, html {
 .bgimg-1 {
     background-position: center;
     background-size: cover;
+    /*background-image: url("../images/auto-ecole-1.jpg");*/
     background-image: url("../images/mac.jpg");
     min-height: 100%;
 }
@@ -31,6 +32,7 @@ body, html {
 /* BASIC CONTACT FORM CSS */
 #contact input,
 #contact textarea {
+    background-color: #f1f1f1;
     height: 45px;
     line-height: 1.4em;
     padding-left: 20px; /* Change this to fit your label text width */
@@ -55,7 +57,7 @@ body, html {
 }
 #contact label span {
     color: darkgray;
-    background-color: transparent;
+    background-color: #f1f1f1;
     font-size: 14px;
     font-weight: 200;
     position: absolute;
@@ -90,4 +92,7 @@ body, html {
 #contact input:focus,
 #contact textarea:focus {
     transition: all 0.3s ease;
+}
+.name-auto-ecole {
+    font-weight: 900;
 }
