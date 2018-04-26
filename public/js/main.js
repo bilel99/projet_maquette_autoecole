@@ -79,13 +79,55 @@ $(document).ready(function() {
 });
 
 /**
- * Carousel OWL Carousel Library
+ * Accordion Style
  */
-/*$(document).ready(function(){
-	$(".owl-carousel").owlCarousel({
-		items: 1,
-		autoplay: true,
-		loop: true,
-		center: true
-	});
-});*/
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+/**
+ * To Top Page Button floating
+ */
+var amountScrolled = 300;
+$(window).scroll(function() {
+    if ( $(window).scrollTop() > amountScrolled ) {
+        $('a#back-to-top').fadeIn('slow');
+    } else {
+        $('a#back-to-top').fadeOut('slow');
+    }
+});
+$('a#back-to-top').click(function() {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 700);
+    return false;
+});
+
+/** 
+ * Random Text for Loop span block html
+ * Static home page Function
+ */
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+let text = new Array();
+text[0] = "Votre auto école et vraiment cool, vous m'avez permis d'avoir mon permis trés rapidement. Vos moniteur sont vraiment gentil et cool. Merci à vous et bonne continuation :-)";
+text[1] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus id provident voluptatum accusamus maiores delectus molestiae vel consequatur hic fugiat minus nihil saepe ut labore, nemo ducimus tempore sint.";
+text[2] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus id provident voluptatum accusamus maiores delectus molestiae vel consequatur hic fugiat minus nihil saepe ut labore, nemo ducimus tempore sint.";
+setInterval(function(){
+	let size = text.length;
+	let rand = getRandomInt(0, 2);
+	document.getElementById('statistics').innerHTML = text[rand];
+}, 3000);
